@@ -25,7 +25,7 @@ const startGame = (totalTime ) => {
         {
             clearInterval(timerId);
             scoreGrade()
-           // gameLost()
+           
         }
         else if (totalTime >0 &&(score === cards.length/2)){
         clearInterval(timerId);
@@ -104,29 +104,23 @@ return arr;
 const countScore = ()=>{
     score++;
     scored.innerText = score;
-
-    // if (score => 7)
-    // overLayEnd.querySelector('p').innerText =' 5 start '
-    
-    // else if (score => 5)
-    // overLayEnd.querySelector('p').innerText =' 3 start '
-
-    // else 
-    // overLayEnd.querySelector('p').innerText =' 1 start '
     }
 
 //to count the score grade 
 const scoreGrade = ()=>{
     overLayEnd.classList.add('visible');
 
-    if (score >= 7)
+     //score can be = 6,7, 8 
+    if (score >= 6)
     {
-        overLayEnd.querySelector('p').innerText ='Congratulations you won with 5 start '
+        overLayEnd.querySelector('p').innerText ='Congratulations You Won. Grade: 5 start! '
     }
-    else if (score <= 5)
+    //score can be 3,4,5
+    else if (score >= 3) 
     {
-    overLayEnd.querySelector('p').innerText ='Congratulations you won with 3 start '
+    overLayEnd.querySelector('p').innerText ='Congratulations You Won. Grade: 3 start ! '
     }
+    //score 0,1,2
     else 
     {
     gameLost();
@@ -142,7 +136,6 @@ const gameLost = ()=>{
 const gameWon = ()=>{
     overLayEnd.querySelector('p').innerText = 'You Won'
     overLayEnd.classList.add('visible');
-   //scoreGrade();
 }
 
 
@@ -150,7 +143,7 @@ const gameWon = ()=>{
 //*********************Event Listner*********************** */
     overLay.addEventListener('click',()=>{
     overLay.classList.remove('visible');
-    startGame(50)
+    startGame(60)
 })
 
     replay.addEventListener('click',()=>{

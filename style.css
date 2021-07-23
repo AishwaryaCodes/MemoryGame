@@ -199,7 +199,7 @@ cursor: pointer;
 
 @media (max-width: 550px){
     .game-container{
-        grid-template-columns: repeat(2,auto);
+        grid-template-columns: repeat(4,auto);
     }
     .info-container{
         flex-direction: column
